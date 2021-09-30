@@ -7,11 +7,7 @@
  * Submission Date:         October 05, 2021
  */
 
-#include <assert.h>
-#include <string.h>
 #include "lab3Clock.h"
-#include <iostream>
-using namespace std;
 
 Clock::Clock()
 {
