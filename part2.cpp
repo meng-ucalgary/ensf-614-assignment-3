@@ -27,7 +27,7 @@ int main()
     cout << "Contents of x: \"" << x.c_str() << "\" (expected \"\")." << endl;
     cout << "Length of x: " << x.length() << " (expected 0).\n"
          << endl;
-#if 0
+#if 1
     x.append("foot");
     cout << "Contents of x: \"" << x.c_str() << "\" (expected \"foot\")." << endl;
     cout << "Length of x: " << x.length() << " (expected 4).\n" << endl;

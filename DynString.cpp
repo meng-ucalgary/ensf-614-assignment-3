@@ -68,3 +68,29 @@ void DynString::truncate(int new_length)
     storageM = smaller_storage;
     lengthM = new_length;
 }
+
+void DynString::append(const DynString &tail)
+{
+    // allocate a new array of the right length
+    char *temp = new char[lengthM + tail.lengthM + 1];
+
+    // copy whatever characters need to be copied into the new array
+    for(int i=0; i<lengthM; i++)
+    {
+        temp[i] = storageM[i];
+    }
+
+    for(int i=0; i<tail.lengthM; i++)
+    {
+        temp[i + lengthM] = tail.storageM[i];
+    }
+
+    temp[lengthM + tail.lengthM] = '\0';
+
+    // deallocate the old array
+    delete[] storageM;
+    storageM = temp;
+
+    // adjust the value of the lengthM variable
+    lengthM = lengthM + tail.lengthM;
+}
